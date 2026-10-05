@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Cardápio digital com pedido direto pelo WhatsApp.">
+  <title>Brasa Burger — Cardápio Digital</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <span class="badge">CARDÁPIO DIGITAL</span>
+      <h1>Brasa Burger</h1>
+      <p>Hambúrguer artesanal, ingredientes selecionados e muito sabor.</p>
+      <div class="status"><span></span> Aberto para pedidos</div>
+    </div>
+  </header>
+
+  <main>
+    <section class="intro">
+      <div>
+        <p class="eyebrow">NOSSO CARDÁPIO</p>
+        <h2>Escolha seus favoritos</h2>
+        <p class="muted">Adicione os produtos à sacola e envie seu pedido direto pelo WhatsApp.</p>
+      </div>
+      <button class="cart-button" id="openCart" aria-label="Abrir sacola">
+        🛒 <span>Sacola</span><b id="cartCount">0</b>
+      </button>
+    </section>
+
+    <section class="category">
+      <h3>🍔 Hambúrgueres</h3>
+      <div class="products" id="products"></div>
+    </section>
+  </main>
+
+  <aside class="cart" id="cart" aria-hidden="true">
+    <div class="cart-header">
+      <div>
+        <p class="eyebrow">SEU PEDIDO</p>
+        <h2>Sacola</h2>
+      </div>
+      <button class="close" id="closeCart" aria-label="Fechar">×</button>
+    </div>
+
+    <div class="cart-items" id="cartItems">
+      <div class="empty">Sua sacola está vazia.<br>Escolha um produto para começar.</div>
+    </div>
+
+    <div class="cart-footer">
+      <div class="total-row"><span>Total</span><strong id="cartTotal">R$ 0,00</strong></div>
+      <button class="checkout" id="checkout">Enviar pedido pelo WhatsApp</button>
+      <small>O pedido será enviado para o WhatsApp da loja para confirmação.</small>
+    </div>
+  </aside>
+
+  <div class="modal-backdrop" id="modalBackdrop">
+    <div class="modal">
+      <button class="close modal-close" id="modalClose">×</button>
+      <img id="modalImage" src="" alt="">
+      <div class="modal-body">
+        <p class="eyebrow">PERSONALIZE</p>
+        <h2 id="modalName"></h2>
+        <p id="modalDescription" class="muted"></p>
+        <strong id="modalPrice" class="modal-price"></strong>
+
+        <label class="field">
+          <span>Observação <small>(opcional)</small></span>
+          <textarea id="observation" rows="3" placeholder="Ex.: sem cebola, molho à parte..."></textarea>
+        </label>
+
+        <button class="add-button" id="addToCart">Adicionar à sacola</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+  <footer>Modelo demonstrativo • Cardápio digital desenvolvido por <strong>Prado Studio</strong></footer>
+  <script src="script.js"></script>
+</body>
+</html>
